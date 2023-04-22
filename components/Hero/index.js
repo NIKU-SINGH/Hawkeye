@@ -12,7 +12,7 @@ function index() {
         </div>
 
         <div className="font-Raleway text-lg text font-medium mt-4 md:mt-10 w-3/4">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`&apos;` standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
         </div>
       </div>
 

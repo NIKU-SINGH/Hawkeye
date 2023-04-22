@@ -4,7 +4,15 @@ import Marquee from "react-fast-marquee";
 function explore() {
   return (
     <div>
-      <Marquee speed={200}>
+      <Marquee
+        play={true}
+        pauseOnHover={true}
+        onFinish={() => null}
+        speed={100}
+        direction="left"
+        className="overflow-hidden  "
+        gradient={true}
+      >
         I can be a React component, multiple React components, or just some
         text.
       </Marquee>
