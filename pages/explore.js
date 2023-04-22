@@ -1,10 +1,11 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
+import Card from "../components/Cards/index";
 
 function explore() {
   return (
     <div>
-      <Marquee
+      {/* <Marquee
         play={true}
         pauseOnHover={true}
         onFinish={() => null}
@@ -15,7 +16,15 @@ function explore() {
       >
         I can be a React component, multiple React components, or just some
         text.
-      </Marquee>
+      </Marquee> */}
+
+      {/* Main content */}
+      <div className="h-full m-10 flex flex-col items-center justify-center">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
     </div>
   );
 }
