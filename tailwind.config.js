@@ -6,6 +6,11 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      'Raleway': ['Raleway','sans-serif'],
+      'Poppins':['Poppins','sans-serif'],
+      'Montserrat':['Montserrat','sans-serif'],
+  },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
