@@ -88,7 +88,7 @@ function explore() {
           {/* Start */}
 
           <button
-            className="bg-[#f2a900] text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+            className="bg-[#f2a900] text-white active:bg-pink-600 font-normal uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
             type="button"
             onClick={() => setShowModal(true)}
           >
@@ -103,7 +103,7 @@ function explore() {
                   <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                     {/*header*/}
                     <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                      <h3 className="text-3xl font-semibold">Add Node</h3>
+                      <h3 className="text-2xl font-normal">Add Node</h3>
                       <button
                         className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                         onClick={() => setShowModal(false)}
@@ -122,7 +122,7 @@ function explore() {
                       {/* First form */}
                           <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
                             <label
-                              class=" tracking-wide text-black text-base font-normal mb-2"
+                              className="  w-48 tracking-wide text-black text-base font-normal mb-2"
                               htmlFor="Enter the Node Name"
                             >
                               Name 
@@ -137,66 +137,78 @@ function explore() {
                         {/* Second Form */}
                           <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
                             <label
-                              class=" tracking-wide text-black text-base font-normal mb-2"
+                              className="  w-48 tracking-wide text-black text-base font-normal mb-2"
                               htmlFor="Enter the Node Name"
                             >
-                              Name 
+                              RPC host 
                             </label>
                             <input
-                              class="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
+                              className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
                               id="company"
                               type="text"
-                              placeholder="Enter the Node Name"
+                              placeholder="Enter the RPC host"
                             />
                           </div>
                         {/* Second Form */}
                           <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
                             <label
-                              class=" tracking-wide text-black text-base font-normal mb-2"
+                              className=" w-48  tracking-wide text-black text-base font-normal mb-2"
                               htmlFor="Enter the Node Name"
                             >
-                              Name 
+                              RPC Port 
                             </label>
                             <input
-                              class="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
+                              className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
                               id="company"
                               type="text"
-                              placeholder="Enter the Node Name"
+                              placeholder="Enter the RPC Port"
                             />
                           </div>
                         {/* Second Form */}
                           <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
                             <label
-                              class=" tracking-wide text-black text-base font-normal mb-2"
+                              className="  w-48 tracking-wide text-black text-base font-normal mb-2"
                               htmlFor="Enter the Node Name"
                             >
-                              Name 
+                              Mirror RPC Port 
+                            </label>
+                            <input
+                              className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
+                              id="company"
+                              type="text"
+                              placeholder="Enter the Mirror RPC Port"
+                            />
+                          </div>
+                          <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
+                            <label
+                              className="  w-48 tracking-wide text-black text-base font-normal mb-2"
+                              htmlFor="Enter the Node Name"
+                            >
+                              Username 
                             </label>
                             <input
                               class="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
                               id="company"
                               type="text"
-                              placeholder="Enter the Node Name"
+                              placeholder="Enter the Username"
                             />
                           </div>
-                      
-
-
-                       
-                        
-                        <div class="-mx-3 md:flex mt-2">
-                          <div class="md:w-full px-3">
-                            <button class="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full">
-                              Button
-                            </button>
+                          <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
+                            <label
+                              className=" w-48 tracking-wide text-black text-base font-normal mb-2"
+                              htmlFor="Enter the Node Name"
+                            >
+                              Password
+                            </label>
+                            <input
+                              className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
+                              id="company"
+                              type="text"
+                              placeholder="Enter the Password"
+                            />
                           </div>
-                        </div>
                       </div>
                     </form>
-
-
-
-
                     {/*footer*/}
                     <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
                       <button
@@ -207,7 +219,7 @@ function explore() {
                         Close
                       </button>
                       <button
-                        className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        className="bg-[#f2a900] text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-2 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                         type="button"
                         onClick={() => setShowModal(false)}
                       >
