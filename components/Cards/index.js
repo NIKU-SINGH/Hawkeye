@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { useState } from "react";
 
-function index() {
+function Index() {
   const [open, setOpen] = useState(false);
 
   console.log("status is", open);
@@ -31,7 +31,7 @@ function index() {
             {/* Pointer icon */}
             <div
               onClick={() => setOpen(!open)}
-              className="bg-gray-800 text-gray-300 rounded-full h-8 w-8 flex items-center justify-center"
+              className="bg-orange-700 text-orange-300 rounded-full h-8 w-8 flex items-center justify-center"
             >
               {open ? (
                 <svg
@@ -81,4 +81,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;
