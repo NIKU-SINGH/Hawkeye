@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Hero from '../components/Hero/index'
-
+import Mainnav from '../components/Navbar/mainNavbar'
 export default function Home() {
   return (
     <main
@@ -8,7 +8,7 @@ export default function Home() {
       className=' h-full w-full'
     >
     <div className='bg-hero w-full h-full'>
-
+      <Mainnav />
       <Hero />
     </div>
     </main>
