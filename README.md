@@ -10,10 +10,11 @@ It provides users with a user friendly interface, so one can keep track of impor
 ![Image](https://raw.githubusercontent.com/NIKU-SINGH/Hawkeye/main/public/images/code1.jpg)
 
 ### Frontend
-
+- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+- Web Sockets to share data bi-directionally
 
 ## Getting Started
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
 
 First, run the development server:
 
