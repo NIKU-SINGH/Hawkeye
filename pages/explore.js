@@ -2,45 +2,10 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 import Card from "../components/Cards/index";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+import Carousel from "../components/Carousels/clrs.js";
+import BlockInfo from "../components/Info/index";
 
-const data = [
-  {
-    name : "R pi 4",
-    node_id: "5",
-    status: "Active",
-    height: 77777,
-    img: "/images/rpi.png"
-
-  },
-  {
-    name : "bcoin",
-    node_id: "15",
-    status: "Stale",
-    height: 77779,
-    img: "/images/bcoin.png"
-  },
-  {
-    name : "lnd",
-    node_id: "7",
-    status: "Valid Fork",
-    height: 670706,
-    img: "/images/lnd.jpg"
-
-  },
-  {
-    name : "Core",
-    node_id: "25",
-    status: "Active",
-    height: 77777,
-    img: "/images/core.png"
-
-  },
-]
 function explore() {
-  const [showModal, setShowModal] = React.useState(false);
-  console.log("datra",data.img)
-
   const handleSubmit = () => {
     console.log("Entering explore");
   };
@@ -59,213 +24,136 @@ function explore() {
         text.
       </Marquee> */}
 
-      <div className="max-w-md mx-auto absoulte mt-10 ">
-        <div className="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
-          <div className="grid place-items-center h-full w-12 text-gray-300">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-          </div>
+      <div className="flex items-center justify-center">
+        <div className="w-1/3 h-1/3 ">
+          <Carousel />
+        </div>
 
-          <input
-            class="peer h-full w-full outline-none text-sm text-gray-700 pr-2"
-            type="text"
-            id="search"
-            placeholder="Add nodes here"
-          />
-
-          {/* Start */}
-
-          <button
-            className="bg-[#f2a900] text-white active:bg-pink-600 font-normal uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-            type="button"
-            onClick={() => setShowModal(true)}
-          >
-            Add
-          </button>
-
-          {showModal ? (
-            <>
-              <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                <div className="relative w-auto my-6 mx-auto max-w-3xl">
-                  {/*content*/}
-                  <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                    {/*header*/}
-                    <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                      <h3 className="text-2xl font-normal">Add Node</h3>
-                      <button
-                        className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                        onClick={() => setShowModal(false)}
-                      >
-                        <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-                          
-                        </span>
-                      </button>
-                    </div>
-                    {/*body*/}
-
-
-                    <form>
-                      <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
-
-                      {/* First form */}
-                          <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
-                            <label
-                              className="  w-48 tracking-wide text-black text-base font-normal mb-2"
-                              htmlFor="Enter the Node Name"
-                            >
-                              Name 
-                            </label>
-                            <input
-                              class="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
-                              id="company"
-                              type="text"
-                              placeholder="Enter the Node Name"
-                            />
-                          </div>
-                        {/* Second Form */}
-                          <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
-                            <label
-                              className="  w-48 tracking-wide text-black text-base font-normal mb-2"
-                              htmlFor="Enter the Node Name"
-                            >
-                              RPC host 
-                            </label>
-                            <input
-                              className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
-                              id="company"
-                              type="text"
-                              placeholder="Enter the RPC host"
-                            />
-                          </div>
-                        {/* Second Form */}
-                          <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
-                            <label
-                              className=" w-48  tracking-wide text-black text-base font-normal mb-2"
-                              htmlFor="Enter the Node Name"
-                            >
-                              RPC Port 
-                            </label>
-                            <input
-                              className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
-                              id="company"
-                              type="text"
-                              placeholder="Enter the RPC Port"
-                            />
-                          </div>
-                        {/* Second Form */}
-                          <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
-                            <label
-                              className="  w-48 tracking-wide text-black text-base font-normal mb-2"
-                              htmlFor="Enter the Node Name"
-                            >
-                              Mirror RPC Port 
-                            </label>
-                            <input
-                              className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
-                              id="company"
-                              type="text"
-                              placeholder="Enter the Mirror RPC Port"
-                            />
-                          </div>
-                          <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
-                            <label
-                              className="  w-48 tracking-wide text-black text-base font-normal mb-2"
-                              htmlFor="Enter the Node Name"
-                            >
-                              Username 
-                            </label>
-                            <input
-                              class="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
-                              id="company"
-                              type="text"
-                              placeholder="Enter the Username"
-                            />
-                          </div>
-                          <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
-                            <label
-                              className=" w-48 tracking-wide text-black text-base font-normal mb-2"
-                              htmlFor="Enter the Node Name"
-                            >
-                              Password
-                            </label>
-                            <input
-                              className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
-                              id="company"
-                              type="text"
-                              placeholder="Enter the Password"
-                            />
-                          </div>
-                      </div>
-                    </form>
-                    {/*footer*/}
-                    <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                      <button
-                        className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                        type="button"
-                        onClick={() => setShowModal(false)}
-                      >
-                        Close
-                      </button>
-                      <button
-                        className="bg-[#f2a900] text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-2 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                        type="button"
-                        onClick={() => setShowModal(false)}
-                      >
-                        Save Changes
-                      </button>
-                    </div>
+        {/* Second Column */}
+        <div className=" h-full w-1/2 ">
+          <h1 className="font-semibold text-2xl flex flex-col text-center">
+            Blochain Info
+          </h1>
+          <div>
+            <div class="flex flex-col">
+              <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+                <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                  <div class="overflow-hidden">
+                    <table class="min-w-full">
+                      <thead class="bg-gray-200 border-b">
+                        <tr>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            #
+                          </th>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            First
+                          </th>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            Last
+                          </th>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            Handle
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                            1
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            Mark
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            Otto
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            @mdo
+                          </td>
+                        </tr>
+                        <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                            2
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            Jacob
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            Thornton
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            @fat
+                          </td>
+                        </tr>
+                        <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                            3
+                          </td>
+                          <td
+                            colspan="2"
+                            class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                          >
+                            Larry
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            @twitter
+                          </td>
+                        </tr>
+                        <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                            4
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            Whitney
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            Austin
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            @mdo
+                          </td>
+                        </tr>
+                        <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                            5
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            Ted
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            Obama
+                          </td>
+                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            @fat
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
-              <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-            </>
-          ) : null}
-
-          {/* End */}
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Main content */}
-      <div className="h-[500px] m-10 items-center justify-center flex-wrap">
-        <Carousel autoPlay={true}>
-          <div className="flex">
-            {
-              data.map((card,idx) => (
-                
-                <Card key={idx} card={card} />
-              ))
-            }
-          </div>
-          <div className="flex">
-            {
-              data.map((card,idx) => (
+    {/* New Section */}
+      <BlockInfo />
 
-                <Card key={idx} card={card} />
-              ))
-            }
-          </div>
-            <div className="flex">
-              {
-                data.map((card,idx) => (
 
-                  <Card key={idx} card={card} />
-                ))
-              }
-            </div>
-        </Carousel>
-      </div>
+
     </div>
   );
 }
