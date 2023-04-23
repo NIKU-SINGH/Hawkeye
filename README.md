@@ -15,6 +15,11 @@ It provides users with a friendly interface, so one can keep track of important 
 - Connecting nodes with forkscanner.
 ![Image](https://raw.githubusercontent.com/NIKU-SINGH/Hawkeye/main/public/images/code1.jpg)
 
+### Design and Figma File
+- UserFlow and Design can be found here
+![Image](https://raw.githubusercontent.com/NIKU-SINGH/Hawkeye/main/public/images/design.png)
+
+
 ## Getting Started
 
 
