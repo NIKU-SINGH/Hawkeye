@@ -1,6 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Introduction
+It provides users with a user friendly interface, so one can keep track of important events and perhaps save themselves from many of the attack surfaces and at the same time know info about other forked chains or when any soft fork happens.
+
+### Backend 
+- Bitcoin testnet nodes running parallel.
+- Creating db and connecting with forkscanner.
+- Connecting nodes with forkscanner.
+
+### Frontend
+
 
 ## Getting Started
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 
