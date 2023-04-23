@@ -4,6 +4,7 @@ It provides users with a friendly interface, so one can keep track of important 
 
 ### Frontend
 ![image](https://raw.githubusercontent.com/NIKU-SINGH/Hawkeye/main/public/images/design.jpeg)
+![Image](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/463/161/datas/original.png)
 - This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 - Web Sockets to share data bi-directionally
 
