@@ -10,7 +10,7 @@ function Index() {
         onClick={() => router.push("/")}
         className="font-extrabold font-Raleway text-2xl md:text-2xl flex-1 cursor-pointer"
       >
-        forkviewer.
+        Hawkeye.
       </div>
 
       {/* Button */}

@@ -38,12 +38,12 @@ function explore() {
 
             <button 
             onClick={() => handleSubmit()}
-            className="bg-orange-400 p-3 text-white">Add</button>
+            className="bg-[#f2a900] p-3 text-white">Add</button>
         </div>
       </div>
 
       {/* Main content */}
-      <div className="h-full m-10 flex flex-col items-center justify-center">
+      <div className="h-full m-10 flex items-center justify-center flex-wrap">
         <Card />
         <Card />
         <Card />

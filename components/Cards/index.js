@@ -7,16 +7,16 @@ function Index() {
 
   console.log("status is", open);
   return (
-    <div className="flex-row justify-center items-center">
-      <div className="flex-col">
-        <div className="flex h-20 p-2 mt-2  bg-orange-200 rounded-lg hover:cursor-pointer hover:shadow border">
+    <div className="flex-row justify-center items-center m-8">
+      <div className="flex w-64">
+        <div className="flex-col items-center p-2 mt-2  bg-orange-200 rounded-lg hover:cursor-pointer hover:shadow border">
           {/* Logo */}
           <div>
             <Image
               src="/images/nostr_btc.jpg"
               height={1200}
               width={1200}
-              className="h-16 w-16 rounded-lg  "
+              className="  rounded-lg  "
             />
           </div>
           {/* Information */}
@@ -31,7 +31,7 @@ function Index() {
             {/* Pointer icon */}
             <div
               onClick={() => setOpen(!open)}
-              className="bg-orange-700 text-orange-300 rounded-full h-8 w-8 flex items-center justify-center"
+              className="bg-[#f2a900] text-white rounded-full h-6 w-6 p-1 flex items-center justify-center"
             >
               {open ? (
                 <svg
@@ -69,7 +69,7 @@ function Index() {
 
       {/* Dropover */}
       {open ? (
-        <div className="bg-orange-300 p-4 rounded flex">
+        <div className="bg-orange-300 p-4 w-64 rounded flex">
           <h className="font-medium">Explorer : </h>
           <p> Content can be added here</p>
           
