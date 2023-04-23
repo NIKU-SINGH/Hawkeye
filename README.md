@@ -4,8 +4,10 @@ It provides users with a user friendly interface, so one can keep track of impor
 
 ### Backend 
 - Bitcoin testnet nodes running parallel.
+![Image](https://raw.githubusercontent.com/NIKU-SINGH/Hawkeye/main/public/images/code2.jpeg)
 - Creating db and connecting with forkscanner.
 - Connecting nodes with forkscanner.
+![Image](https://raw.githubusercontent.com/NIKU-SINGH/Hawkeye/main/public/images/code1.jpg)
 
 ### Frontend
 
