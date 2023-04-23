@@ -8,17 +8,17 @@ function Index({ key, card }) {
 
   console.log("status is", open);
   return (
-    <div className="flex-row justify-center items-center m-8">
-      <div className="flex-col items-center p-2 mt-2  bg-blue-200 rounded-lg hover:cursor-pointer hover:shadow border">
+    <div className="flex-row justify-center items-center m-8 font-Poppins">
+      <div className="flex-col items-center p-2 mt-2 w-72 bg-orange-300 rounded-lg hover:cursor-pointer hover:shadow border">
         {/* Logo */}
-        <div className="w-64">
-          <Image
-            src={`${card.img}`}
-            height={1200}
-            width={1200}
-            className="rounded-lg h-24 w-24 object-contain"
-          />
-        </div>
+          <div className="w-full flex items-center justify-center">
+            <Image
+              src={`${card.img}`}
+              height={1200}
+              width={1200}
+              className="rounded-lg h-24 w-24 object-contain"
+            />
+          </div>
 
         {/* Information */}
         <div className="rounded-lg">
@@ -26,18 +26,30 @@ function Index({ key, card }) {
           <h1 className="text-gray-800 font-medium text-2xl text-center">
             {card.name}
           </h1>
-          <div className="p-1  flex-col items-center justify-center">
-            <div className="bg-gray-300 w-full flex justify-around ">
-              <p className="bg-gray-600 text-white w-1/2 border-2 border-gray">Node</p>
-              <p className="bg-gray-400 w-1/2 border-2 border-gray">{card.node_id}</p>
+          <div className="p-1  flex-col items-center justify-center text-center">
+            <div className=" w-full flex justify-around ">
+              <p className="bg-gray-600 text-white w-1/2 border-2 p-2 border-gray">
+                Node
+              </p>
+              <p className="bg-gray-400 w-1/2 border-2 border-gray p-2">
+                {card.node_id}
+              </p>
             </div>
             <div className="bg-gray-300 w-full flex justify-around">
-              <p className="bg-gray-600 text-white w-1/2 border-2 border-gray">Staus</p>
-              <p className="bg-gray-400 w-1/2 border-2 border-gray">{card.status}</p>
+              <p className="bg-gray-600 text-white w-1/2 border-2 p-2 border-gray">
+                Staus
+              </p>
+              <p className="bg-gray-400 w-1/2 border-2 p-2 border-gray">
+                {card.status}
+              </p>
             </div>
             <div className="bg-gray-300 w-full flex justify-around">
-              <p className="bg-gray-600 text-white w-1/2 border-2 border-gray">Height</p>
-              <p className="bg-gray-400 w-1/2 border-2 border-gray">{card.height}</p>
+              <p className="bg-gray-600 text-white w-1/2 border-2 p-2 border-gray">
+                Height
+              </p>
+              <p className="bg-gray-400 w-1/2 border-2 p-2 border-gray">
+                {card.height}
+              </p>
             </div>
           </div>
           {/* </div> */}

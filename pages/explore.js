@@ -1,150 +1,240 @@
 import React from "react";
-import Marquee from "react-fast-marquee";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import Card from "../components/Cards/index";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import Carousel from "../components/Carousels/clrs.js";
-import BlockInfo from "../components/Info/index";
-import Navbar from '../components/Navbar/index';
+import Table from "../components/Table/Table";
+import Mainnav from '../components/Navbar/mainNavbar'
+
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 6,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 4,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 1,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
+
+// Card Data
+const data = [
+  {
+    name: "Rpi 4",
+    node_id: "5",
+    status: "Active",
+    height: 77777,
+    img: "/images/rpi.png",
+  },
+  {
+    name: "bcoin",
+    node_id: "15",
+    status: "Stale",
+    height: 77779,
+    img: "/images/bcoin.png",
+  },
+  {
+    name: "Core",
+    node_id: "25",
+    status: "Active",
+    height: 77777,
+    img: "/images/core.png",
+  },
+  {
+    name: "bcoin",
+    node_id: "15",
+    status: "Stale",
+    height: 77779,
+    img: "/images/bcoin.png",
+  },
+  {
+    name: "Core",
+    node_id: "25",
+    status: "Active",
+    height: 77777,
+    img: "/images/core.png",
+  },
+];
 
 function explore() {
-  const handleSubmit = () => {
-    console.log("Entering explore");
-  };
   return (
     <div>
-    <Navbar />
-      {/* <Marquee
-        play={true}
-        pauseOnHover={true}
-        onFinish={() => null}
-        speed={100}
-        direction="left"
-        className="overflow-hidden  "
-        gradient={true}
-      >
-        I can be a React component, multiple React components, or just some
-        text.
-      </Marquee> */}
+      <Mainnav />
 
-      <div className="flex items-center justify-center">
-        <div className="w-1/3 h-1/3 ">
-          <Carousel />
+      {/* TO manage Nodes */}
+      <div className=" flex items-center justify-center flex-col">
+        <h1 className="text-lg font-Poppins font-semibold">Manage Node</h1>
+        <div className="flex justify-around w-96 bg-orange-200 p-4 rounded-full">
+          <button className="bg-orange-500 p-2 hover:bg-orange-400 w-32 text-white rounded">
+            Add
+          </button>
+          <button className="bg-orange-500 p-2 w-32 hover:bg-orange-400 text-white rounded">
+            Remove
+          </button>
         </div>
 
-        {/* Second Column */}
-        <div className=" h-full w-1/2 ">
-          <h1 className="font-semibold text-2xl flex flex-col text-center">
-            Blockhain Info
+        {/* Carousel Section */}
+        <div className="bg-orange-100 h-1/2 w-full m-4">
+          <Carousel responsive={responsive}>
+            {data.map((card, idx) => (
+              <Card key={idx} card={card} />
+            ))}
+          </Carousel>
+        </div>
+
+        {/* Table Section */}
+        <div className=" w-full h-auto">
+          <Table />
+        </div>
+
+        {/* Get Block Info Section */}
+        <div className="w-full p-10 mx-8">
+          <h1 className="font-Poppins font-bold text-center text-3xl mt-4">
+            Get Blockchain Info
           </h1>
-          <div>
-            <div class="flex flex-col">
-              <div class="overflow-x-auto sm: lg:mx-0.5">
-                <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                  <div class="overflow-hidden">
-                    <table class="min-w-full">
-                      <thead class="bg-gray-200 border-b">
-                        <tr>
-                          <th
-                            scope="col"
-                            class="text-sm font-medium bg-gray-400 text-gray-900 px-6 py-4 text-left"
-                          >
-                            Property
-                          </th>
-                          <th
-                            scope="col"
-                            class="text-sm font-medium bg-gray-300 text-gray-900 px-6 py-4 text-left"
-                          >
-                            
-                          </th>
-                          <th
-                            scope="col"
-                            class="text-sm font-medium bg-gray-400 text-gray-900 px-6 py-4 text-left"
-                          >
-                            Property
-                          </th>
-                          <th
-                            scope="col"
-                            class="text-sm font-medium bg-gray-300 text-gray-900 px-6 py-4 text-left"
-                          >
-                            
-                          </th>
-                        </tr>
-                      </thead>
 
-                      <tbody>
-                        <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                          <td class="px-6 py-4 bg-gray-400  whitespace-nowrap text-sm font-medium text-gray-900">
-                            Height
-                          </td>
-                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            
-                          </td>
-                          <td class="text-sm text-gray-900  bg-gray-400  font-light px-6 py-4 whitespace-nowrap">
-                            Pow
-                          </td>
-                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            
-                          </td>
-                        </tr>
-
-                        <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                          <td class="px-6 py-4 bg-gray-400 whitespace-nowrap text-sm font-medium text-gray-900">
-                            Forks
-                          </td>
-                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            
-                          </td>
-                          <td class="text-sm bg-gray-400 text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            Size
-                          </td>
-                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            
-                          </td>
-                        </tr>
-
-
-                        <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                          <td class="px-6 py-4 whitespace-nowrap bg-gray-400 text-sm font-medium text-gray-900">
-                            First Seen
-                          </td>
-                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                          </td>
-                          
-                          <td class="text-sm text-gray-900 bg-gray-400 font-light px-6 py-4 whitespace-nowrap">
-                            
-                          </td>
-                        </tr>
-
-                        <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                          <td class="px-6 py-4 whitespace-nowrap bg-gray-400 text-sm font-medium text-gray-900">
-                            Miner
-                          </td>
-                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            
-                          </td>
-                          <td class="text-sm text-gray-900 bg-gray-400 font-light px-6 py-4 whitespace-nowrap">
-                            Fees
-                          </td>
-                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            
-                          </td>
-                        </tr>
-                        
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
+          <form className="flex flex-wrap items-center justify-center ">
+            <div class=" m-2 px-4 py-2 flex items-center justify-center bg-white rounded-full ">
+              <label
+                className=" w-48  tracking-wide text-black text-base font-normal"
+                htmlFor="Enter the Node Name"
+              >
+                <button className="bg-orange-400 p-2 w-48 rounded text-white">
+                  Block By Height
+                </button>
+              </label>
+              <input
+                className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4"
+                id="company"
+                type="text"
+                placeholder="Enter the Block Height"
+              />
             </div>
-          </div>
+
+            <div class=" px-4 m-2 py-2 flex items-center justify-center bg-white rounded-full ">
+              <label
+                className=" w-48  tracking-wide text-black text-base font-normal"
+                htmlFor="Enter the Node Name"
+              >
+                <button className="bg-orange-400 p-2 w-48 rounded text-white">
+                  Block By Hash
+                </button>
+              </label>
+              <input
+                className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4"
+                id="company"
+                type="text"
+                placeholder="Enter the Block Height"
+              />
+            </div>
+
+            <div class=" px-4 m-2 py-2 flex items-center justify-center bg-white rounded-full ">
+              <label
+                className=" w-48  tracking-wide text-black text-base font-normal"
+                htmlFor="Enter the Node Name"
+              >
+                <button className="bg-orange-400 p-2 w-48 rounded text-white">
+                  Get tips
+                </button>
+              </label>
+              <input
+                className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4"
+                id="company"
+                type="text"
+                placeholder="Enter the Block Height"
+              />
+            </div>
+
+            <div class=" px-4 m-2 py-2 flex items-center justify-center bg-white rounded-full ">
+              <label
+                className=" w-48  tracking-wide text-black text-base font-normal"
+                htmlFor="Enter the Node Name"
+              >
+                <button className="bg-orange-400 p-2 w-48 rounded text-white">
+                  Get Peers
+                </button>
+              </label>
+              <input
+                className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4"
+                id="company"
+                type="text"
+                placeholder="Enter the Block Height"
+              />
+            </div>
+
+            <div class=" px-4 m-2 py-2 flex items-center justify-center bg-white rounded-full ">
+              <label
+                className=" w-48  tracking-wide text-black text-base font-normal"
+                htmlFor="Enter the Node Name"
+              >
+                <button className="bg-orange-400 p-2 w-48 rounded text-white">
+                  Block from Peer
+                </button>
+              </label>
+              <input
+                className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4"
+                id="company"
+                type="text"
+                placeholder="Enter the Block Height"
+              />
+            </div>
+          </form>
         </div>
+
+        {/* Check Transaction Status */}
+        <h1 className="font-Poppins font-bold text-center text-3xl mt-4">
+          Check Transaction Status
+        </h1>
+        <form>
+          <div class=" px-4 m-2 py-2 flex items-center justify-center bg-white rounded-full ">
+            <label
+              className=" w-48  tracking-wide text-black text-base font-normal"
+              htmlFor="Enter the Node Name"
+            >
+              <button className="bg-orange-400 p-2 w-48 rounded text-white">
+                Check
+              </button>
+            </label>
+            <input
+              className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4"
+              id="company"
+              type="text"
+              placeholder="Enter the Block Height"
+            />
+          </div>
+        </form>
+
+        {/* Update Address List */}
+        <h1 className="font-Poppins font-bold text-center text-3xl mt-4">
+          Update Address List
+        </h1>
+        <form>
+          <div class=" px-4 m-2 py-2 flex items-center justify-center bg-white rounded-full ">
+            <label
+              className=" w-48  tracking-wide text-black text-base font-normal"
+              htmlFor="Enter the Node Name"
+            >
+              <button className="bg-orange-400 p-2 w-48 rounded text-white">
+                Add
+              </button>
+            </label>
+            <input
+              className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4"
+              id="company"
+              type="text"
+              placeholder="Enter the Block Height"
+            />
+          </div>
+        </form>
       </div>
-
-    {/* New Section */}
-      <BlockInfo />
-
-
-
     </div>
   );
 }

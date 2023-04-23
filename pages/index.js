@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Hero from '../components/Hero/index'
 import Mainnav from '../components/Navbar/mainNavbar'
+
 export default function Home() {
   return (
     <main
