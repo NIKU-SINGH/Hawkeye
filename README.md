@@ -1,6 +1,6 @@
 
 ## Introduction
-It provides users with a friendly interface, so one can keep track of important events and perhaps save themselves from many of the attack surfaces and at the same time know info about other forked chains or when any soft fork happens.
+It provides users with a friendly interface, so one can keep track of important events and perhaps save themselves from many of the attack surfaces and at the same time know info about forked chains and trace transcations and addresses from different nodes.
 
 ### Frontend
 ![image](https://raw.githubusercontent.com/NIKU-SINGH/Hawkeye/main/public/images/design.jpeg)
