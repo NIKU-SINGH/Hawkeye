@@ -2,16 +2,18 @@
 ## Introduction
 It provides users with a user friendly interface, so one can keep track of important events and perhaps save themselves from many of the attack surfaces and at the same time know info about other forked chains or when any soft fork happens.
 
+### Frontend
+![image](https://raw.githubusercontent.com/NIKU-SINGH/Hawkeye/main/public/images/design.jpeg)
+- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+- Web Sockets to share data bi-directionally
+
+
 ### Backend 
 - Bitcoin testnet nodes running parallel.
 ![Image](https://raw.githubusercontent.com/NIKU-SINGH/Hawkeye/main/public/images/code2.jpeg)
 - Creating db and connecting with forkscanner.
 - Connecting nodes with forkscanner.
 ![Image](https://raw.githubusercontent.com/NIKU-SINGH/Hawkeye/main/public/images/code1.jpg)
-
-### Frontend
-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-- Web Sockets to share data bi-directionally
 
 ## Getting Started
 
