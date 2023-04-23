@@ -5,9 +5,12 @@ export default function Home() {
   return (
     <main
       // className={`flex min-h-screen flex-col items-center justify-between p- ${inter.className}`}
-      className='bg-hero h-full w-full'
+      className=' h-full w-full bg-gray-900'
     >
+    <div className='bg-hero'>
+
       <Hero />
+    </div>
     </main>
   )
 }

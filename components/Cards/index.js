@@ -1,22 +1,53 @@
 import React from "react";
 import Image from "next/image";
+import { useState } from "react";
 
 function index() {
+  const [open, setOpen] = useState(false);
   return (
-    <div className="flex h-20 p-2 m-2 w-1/2 bg-gray-200 rounded-lg hover:cursor-pointer hover:shadow border">
-      {/* Logo */}
-      <div>
-        <Image
-          src="/images/nostr_btc.jpg"
-          height={1200}
-          width={1200}
-          className="h-16 w-16 rounded-lg  "
-        />
-      </div>
-      {/* Information */}
-      <div className="mx-2">
-        <h1 className="text-gray-800 font-medium text-lg">Hello</h1>
-        <p className="text-gray-800 font-light text-sm">Lorem10dsfjsfsjf[sjsfkslsf dfhdsfhs adfdsfd sfsfijbsafoefib dfioaehgno ouibv sofis</p>
+    <div className="flex-col bg-green-300">
+      <div className="flex h-20 p-2 m-2 w-1/2 bg-gray-200 rounded-lg hover:cursor-pointer hover:shadow border">
+         {/* Logo */}
+        <div>
+          <Image
+            src="/images/nostr_btc.jpg"
+            height={1200}
+            width={1200}
+            className="h-16 w-16 rounded-lg  "
+          />
+        </div>
+        {/* Information */}
+        <div className="flex justify-between w-full items-center">
+          <div className="mx-2">
+            <h1 className="text-gray-800 font-medium text-lg">Hello</h1>
+            <p className="text-gray-800 font-light text-sm">
+              Lorem10dsfjsfsjf[sjsfkslsf dfhdsfhs adfdsfd sfsfijbsafoefib
+              dfioaehgno ouibv sofis
+            </p>
+          </div>
+          {/* Pointer icon */}
+          <div
+            onClick={() => setOpen(true)}
+            className="bg-gray-800 text-gray-300 rounded-full h-8 w-8 flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+          </div>
+        </div>
+
+        {/* Dropover */}
       </div>
     </div>
   );

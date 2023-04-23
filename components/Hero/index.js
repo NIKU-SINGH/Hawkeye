@@ -34,11 +34,11 @@ function index() {
       {/* Image */}
       <div className=" w-full  flex items-center md:p-10 mt-4 justify-center overflow-hidden ">
         <Image
-          src="/images/block.png"
+          src="/images/nostr_btc.jpg"
           height={1200}
           width={1200}
           alt="logo"
-          className="h-64 w-64 md:h-[400px] md:w-[600px] rounded-full"
+          className="h-64 w-64 md:h-96 md:w-96 rounded-full"
         />
       </div>
 
