@@ -8,7 +8,7 @@ function index() {
       <div>
         <div>
           <Image
-            src="/images/hero1.png"
+            src="/images/coin.jpg"
             height={1200}
             width={1200}
             alt="logo"

@@ -2,30 +2,30 @@ import React from "react";
 import Image from "next/image";
 import { useState } from "react";
 
-function Index() {
+function Index({key,card}) {
   const [open, setOpen] = useState(false);
+  console.log("Card details is",card.img)
 
   console.log("status is", open);
   return (
     <div className="flex-row justify-center items-center m-8">
-      <div className="flex w-64">
+      <div className="flex">
         <div className="flex-col items-center p-2 mt-2  bg-orange-200 rounded-lg hover:cursor-pointer hover:shadow border">
           {/* Logo */}
-          <div>
+          <div className="h-64 w-64">
             <Image
-              src="/images/nostr_btc.jpg"
+              src={`${card.img}`}
               height={1200}
               width={1200}
-              className="  rounded-lg  "
+              className="rounded-lg h-48 w-48 object-contain"
             />
           </div>
           {/* Information */}
           <div className="flex justify-between w-full items-center">
             <div className="mx-2">
-              <h1 className="text-gray-800 font-medium text-lg">Hello</h1>
+              <h1 className="text-gray-800 font-medium text-2xl text-left">{card.name}</h1>
               <p className="text-gray-800 font-light text-sm">
-                Lorem10dsfjsfsjf[sjsfkslsf dfhdsfhs adfdsfd sfsfijbsafoefib
-                dfioaehgno ouibv sofis
+                Details of the Node
               </p>
             </div>
             {/* Pointer icon */}
@@ -69,10 +69,10 @@ function Index() {
 
       {/* Dropover */}
       {open ? (
-        <div className="bg-orange-300 p-4 w-64 rounded flex">
-          <h className="font-medium">Explorer : </h>
-          <p> Content can be added here</p>
-          
+        <div className="bg-orange-300 p-4 rounded flex-col text-left">
+          <p>Node ID : {card.node_id}</p>
+          <p>Status: {card.active}</p>
+          <p>Height   : {card.height}</p>
         </div>
       ) : (
         <p></p>
