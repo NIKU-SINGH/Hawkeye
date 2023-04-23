@@ -59,22 +59,31 @@ function explore() {
       </div>
 
       {/* Main content */}
-      <div className="h-full m-10 flex items-center justify-center flex-wrap">
-        <Carousel>
-          <div>
+      <div className="h-[500px] m-10 items-center justify-center flex-wrap">
+        <Carousel autoPlay={true}>
+          <div className="flex">
+            <Card />
+            <Card />
+            <Card />
             <Card />
           </div>
           <div>
-          <Card />
-
+            <div className="flex">
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+            </div>
           </div>
           <div>
-          <Card />
-
+            <div className="flex">
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+            </div>
           </div>
         </Carousel>
-
-    
       </div>
     </div>
   );
