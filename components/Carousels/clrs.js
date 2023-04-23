@@ -45,9 +45,7 @@ function Clrs() {
             useKeyboardArrows={true}
           >
             {data.map((card, idx) => (
-              <div className="flex">
                 <Card key={idx} card={card} />
-              </div>
             ))}
           </Carousel>
         </div>
