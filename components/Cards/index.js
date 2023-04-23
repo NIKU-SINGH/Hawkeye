@@ -2,29 +2,35 @@ import React from "react";
 import Image from "next/image";
 import { useState } from "react";
 
-function Index({ key, card }) {
+function Index({ card }) {
   const [open, setOpen] = useState(false);
-  console.log("Card details is", card.img);
+  // console.log("Card details is", card.height);
 
   console.log("status is", open);
   return (
-    <div className="flex-row justify-center items-center m-8 font-Poppins">
+    <div className="flex-row justify-center items-center m-8 font-Poppins -z-1000">
       <div className="flex-col items-center p-2 mt-2 w-72 bg-orange-300 rounded-lg hover:cursor-pointer hover:shadow border">
         {/* Logo */}
-          <div className="w-full flex items-center justify-center">
-            <Image
-              src={`${card.img}`}
+        <div className="w-full flex items-center justify-center">
+          {/* <Image
+              // src={`${img}`}
+              src={"/public/images/core.png"}
+              alt="img"
               height={1200}
               width={1200}
               className="rounded-lg h-24 w-24 object-contain"
-            />
-          </div>
+            /> */}
+          <img
+            src={"/images/core.png"}
+            className="rounded-lg h-24 w-24 object-contain my-8"
+          ></img>
+        </div>
 
         {/* Information */}
         <div className="rounded-lg">
           {/* <div className="p-2"> */}
           <h1 className="text-gray-800 font-medium text-2xl text-center">
-            {card.name}
+            {/* {card.name} */}
           </h1>
           <div className="p-1  flex-col items-center justify-center text-center">
             <div className=" w-full flex justify-around ">
@@ -32,7 +38,7 @@ function Index({ key, card }) {
                 Node
               </p>
               <p className="bg-gray-400 w-1/2 border-2 border-gray p-2">
-                {card.node_id}
+                {card.id}
               </p>
             </div>
             <div className="bg-gray-300 w-full flex justify-around">
