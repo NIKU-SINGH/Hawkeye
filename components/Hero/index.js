@@ -1,54 +1,55 @@
 import React from "react";
 import Image from "next/image";
-import Block from "../Block/index";
 
 function index() {
   return (
-    <div className="h-full p-10 mx-4 md:mx-20 font-Poppins relative">
-      <div>
-        <div>
-          <Image
-            src="/images/coin.jpg"
-            height={1200}
-            width={1200}
-            alt="logo"
-            className="h-32 w-32 hidden md:inline-block absolute right-0 top-30 md:h-48 md:w-48 rounded-full"
-          />
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="flex-col flex items-center justify-center text-center">
-        <div className="font-Montserrat text-3xl md:text-5xl font-bold w-full md:w-1/2 ">
-          Scan and secure your network with Forkscanner.
-        </div>
-
-        <div className="font-Raleway text-lg text font-medium mt-4 md:mt-10 w-3/4">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry`&apos;` standard dummy
-          text ever since the 1500s, when an unknown printer took a galley of
-          type and scrambled it
-        </div>
-      </div>
-
-      {/* Image */}
-      <div className=" w-full  flex items-center md:p-10 mt-4 justify-center overflow-hidden ">
+    <div className="flex flex-col relative h-screen w-full mt-24 items-center justify-center">
+      <div className="absolute -top-10 left-0">
         <Image
-          src="/images/nostr_btc.jpg"
+          src="/images/circle2.png"
           height={1200}
           width={1200}
-          alt="logo"
-          className="h-64 w-64 md:h-96 md:w-96 rounded-full"
+          alt="image"
+          className="object-full h-48 w-48 md:h-96 md:w-96 -z-10"
+        />
+      </div>
+      <div className="hidden md:inline-block absolute bottom-10 right-0">
+        <Image
+          src="/images/circle1.png"
+          height={1200}
+          width={1200}
+          alt="image"
+          className="object-full h-48 w-48 md:h-96 md:w-96 -z-10"
         />
       </div>
 
-      <div>
+      {/* Content */}
+      <div className=" relative text-5xl w-full  md:w-3/4 text-center p-10 flex items-center flex-col justify-center">
+        <h1 className="text-5xl md:text-6xl font-bold z-20">
+          Monitor your Bitcoin Node
+        </h1>
+        <h1 className="text-lg font-light md:text-2xl md:font-thin w-full md:w-1/2 text-center items-center">
+          Forkscanner - Your all-in-one solution for monitoring the Bitcoin
+          chain and staying ahead of chain forks, double spends, and other
+          critical events.
+        </h1>
+        <div className=" md:hidden absolute -bottom-24 right-0">
+          <Image
+            src="/images/circle1.png"
+            height={1200}
+            width={1200}
+            alt="image"
+            className="object-full h-48 w-48 md:h-96 md:w-96 -z-10"
+          />
+        </div>
+      </div>
+      <div className="relative text-5xl">
         <Image
-          src="/images/btc1.png"
+          src="/images/bg2.png"
           height={1200}
           width={1200}
-          alt="logo"
-          className="h-32 w-32 hidden md:inline-block absolute left-0 bottom-40 md:h-48 md:w-48 rounded-full"
+          alt="image"
+          className=" object-full h-72 w-72 md:h-96 md:w-96"
         />
       </div>
     </div>
