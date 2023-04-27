@@ -92,7 +92,7 @@ function dashboard() {
     <div>
       <div className="flex justify-between font-Poppins">
       <div className="w-64 h-screen ">
-        <Sidebar />
+        {/* <Sidebar /> */}
       </div>
         {/* Node Info */}
         <div className="w-4/5 flex-col">
@@ -124,7 +124,9 @@ function dashboard() {
           <div className="flex mt-10 flex-wrap">
             {/* Table */}
             <div className="w-full m-8 p-4">
-              <Table />
+              <Table />TypeError: __webpack_require__.a is not a function
+
+
             </div>
           </div>
 
