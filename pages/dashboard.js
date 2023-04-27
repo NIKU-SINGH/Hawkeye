@@ -86,7 +86,7 @@ const data = [
 ];
 
 function dashboard() {
-  const [open, setOpen] = useState(false);
+  const [openAdd, setOpenAdd] = useState(false);
 
   return (
     <div>
@@ -100,13 +100,13 @@ function dashboard() {
           <div className="m-8 bg-gray-800 rounded-lg">
             <h1 className="text-xl font-semibold p-4">Manage Node</h1>
             <button
-              onClick={() => setOpen(!open)}
+              onClick={() => setOpenAdd(!openAdd)}
               className="bg-orange-400 m-2 cursor-pointer py-2 text-center w-48 rounded tracking-wide text-white text-base font-normal"
             >
               Add
             </button>
             <button
-              onClick={() => setOpen(!open)}
+              onClick={() => setOpenAdd(!openAdd)}
               className="bg-orange-400 m-2 cursor-pointer py-2 text-center w-48 rounded tracking-wide text-white text-base font-normal"
             >
               Remove
@@ -114,7 +114,7 @@ function dashboard() {
           </div>
 
           <div className="m-8 bg-gray-800 rounded-lg">
-            <h1 className=" text-xl font-semibold p-4 ">Node Info</h1>
+            <h1 className=" text-xl font-semibold p-1 ">Node Info</h1>
             <div className="w-full">
               <Clrs data={data} />
             </div>
@@ -141,7 +141,7 @@ function dashboard() {
       </div>
 
       {/* Modals */}
-      {open ? <Modal /> : ""}
+      {openAdd ? <Modal /> : ""}
     </div>
   );
 }
