@@ -1,9 +1,9 @@
 import React from "react";
-
+import Link from 'next/link'
 function index() {
   return (
     <div>
-      <footer aria-label="Site Footer" class="bg-gray-black ">
+      <footer aria-label="Site Footer" class="bg-gray-900 ">
         <div class="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>
@@ -183,39 +183,39 @@ function index() {
                 <nav aria-label="Footer About Nav" class="mt-8">
                   <ul class="space-y-4 text-sm">
                     <li>
-                      <a
+                      <Link
                         class="text-gray-700 transition text-gray-300"
                         href="/"
                       >
                         Company History
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
+                      <Link
                         class="text-gray-700 transition text-gray-300"
                         href="/"
                       >
                         Meet the Team
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
+                      <Link
                         class="text-gray-700 transition text-gray-300"
                         href="/"
                       >
                         Employee Handbook
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
+                      <Link
                         class="text-gray-700 transition text-gray-300"
                         href="/"
                       >
                         Careers
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </nav>
@@ -227,39 +227,39 @@ function index() {
                 <nav aria-label="Footer Services Nav" class="mt-8">
                   <ul class="space-y-4 text-sm">
                     <li>
-                      <a
+                      <Link
                         class="text-gray-700 transition text-gray-300"
                         href="/"
                       >
                         Web Development
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
+                      <Link
                         class="text-gray-700 transition text-gray-300"
                         href="/"
                       >
                         Web Design
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
+                      <Link
                         class="text-gray-700 transition text-gray-300"
                         href="/"
                       >
                         Marketing
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
+                      <Link
                         class="text-gray-700 transition text-gray-300"
                         href="/"
                       >
                         Google Ads
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </nav>
@@ -271,25 +271,25 @@ function index() {
                 <nav aria-label="Footer Helpful Nav" class="mt-8">
                   <ul class="space-y-4 text-sm">
                     <li>
-                      <a
+                      <Link
                         class="text-gray-700 transition hover:text-gray-700/75"
                         href="/"
                       >
                         FAQs
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
+                      <Link
                         class="text-gray-700 transition hover:text-gray-700/75"
                         href="/"
                       >
                         Support
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
+                      <Link
                         class="group flex justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
                         href="/"
                       >
@@ -301,7 +301,7 @@ function index() {
                           <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
                           <span class="relative inline-flex h-2 w-2 rounded-full bg-teal-500"></span>
                         </span>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </nav>
@@ -312,7 +312,7 @@ function index() {
 
                 <ul class="mt-8 space-y-4 text-sm">
                   <li>
-                    <a
+                    <Link
                       class="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
                       href="/"
                     >
@@ -332,11 +332,11 @@ function index() {
                       </svg>
 
                       <span class="flex-1 text-gray-700">john@doe.com</span>
-                    </a>
+                    </Link>
                   </li>
 
                   <li>
-                    <a
+                    <Link
                       class="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
                       href="/"
                     >
@@ -356,7 +356,7 @@ function index() {
                       </svg>
 
                       <span class="flex-1 text-gray-700">0123456789</span>
-                    </a>
+                    </Link>
                   </li>
 
                   <li class="flex items-start justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end">
@@ -394,21 +394,21 @@ function index() {
               <p class="text-sm text-gray-500">
                 <span class="block sm:inline">All rights reserved.</span>
 
-                <a
+                <Link
                   class="inline-block text-teal-600 underline transition hover:text-teal-600/75"
                   href="/"
                 >
                   Terms & Conditions
-                </a>
+                </Link>
 
                 <span>&middot;</span>
 
-                <a
+                <Link
                   class="inline-block text-teal-600 underline transition hover:text-teal-600/75"
                   href="/"
                 >
                   Privacy Policy
-                </a>
+                </Link>
               </p>
 
               <p class="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">

@@ -65,7 +65,7 @@ const data = [
   },
 ];
 
-function explore() {
+function Explore() {
   const [tips, setTips] = useState([]);
   const [blockData, setBlockData] = useState([]);
   const [maxHeight, setMaxHeight] = useState("");
@@ -376,4 +376,4 @@ function explore() {
   );
 }
 
-export default explore;
+export default Explore;

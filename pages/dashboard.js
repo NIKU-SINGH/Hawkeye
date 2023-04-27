@@ -7,7 +7,8 @@ import Table from "../components/Table/Table";
 import Info from "../components/Info/index";
 import Status from "../components/Status/index";
 import Update from "../components/Update/index";
-
+import Modal from "../components/Modal/index";
+import { useState } from "react";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -63,22 +64,69 @@ const data = [
     height: 77777,
     img: "/images/core.png",
   },
+  {
+    name: "Core",
+    node_id: "25",
+    status: "Active",
+    height: 77777,
+    img: "/images/core.png",
+  },
+  {
+    name: "Core",
+    node_id: "25",
+    status: "Active",
+    height: 77777,
+    img: "/images/core.png",
+  },
+  {
+    name: "Core",
+    node_id: "25",
+    status: "Active",
+    height: 77777,
+    img: "/images/core.png",
+  },
+  {
+    name: "Core",
+    node_id: "25",
+    status: "Active",
+    height: 77777,
+    img: "/images/core.png",
+  },
+  {
+    name: "Core",
+    node_id: "25",
+    status: "Active",
+    height: 77777,
+    img: "/images/core.png",
+  },
 ];
 
 function dashboard() {
+  const [open, setOpen] = useState(false)
+
   return (
     <div>
-      <div className="bg-gray-800 h-10 w-full p-10 ml-96">fdgdgd</div>
-      <div className="flex justiXfy-around font-Poppins mt-10">
-        <div className="">
+      <div className="flex justify-around font-Poppins">
+        <div className="z-20">
           <Sidebar />
         </div>
 
         {/* Node Info */}
-        <div className="w-4/5 flex-col bg-black">
+        <div className="w-4/5 flex-col">
           {/* Carousel Component */}
+          <div className="bg-gray-800 rounded-lg w-full ml-10">
+            <h1 className=" text-2xl font-semibold p-2 ">Manage Node</h1>
+            <button 
+            onClick={( )=> setOpen(!open)}
+            className="bg-orange-400 m-2 cursor-pointer py-2 text-center w-48 rounded tracking-wide text-white text-base font-normal">
+              Add
+            </button>
+            <button className="bg-orange-400 m-2 cursor-pointer py-2 text-center w-48 rounded tracking-wide text-white text-base font-normal">
+              Remove
+            </button>
+          </div>
           <h1 className="ml-8 text-2xl font-semibold p-4 ">Node Info</h1>
-          <div className="">
+          <div className="w-full">
             <Carousel
               swipeable={false}
               draggable={false}
@@ -86,12 +134,14 @@ function dashboard() {
               responsive={responsive}
               ssr={true} // means to render carousel on server-side.
               infinite={true}
-              autoPlaySpeed={1000}
+              autoPlay={true}
+              autoPlaySpeed={3000}
               keyBoardControl={true}
               customTransition="all .5"
               transitionDuration={500}
               containerClass="carousel-container"
               removeArrowOnDeviceType={["tablet", "mobile"]}
+              rewindWithAnimation={true}
               dotListClass="custom-dot-list-style"
               itemClass="carousel-item-padding-80-px"
               className="overflow-hidden flex items-center justify-center"
@@ -119,12 +169,18 @@ function dashboard() {
             <Info />
           </div>
 
-          <div className=" ">
+          <div className="m-8">
             <Status />
             <Update />
           </div>
         </div>
       </div>
+
+
+      {/* Modals */}
+      {
+        open ? <Modal /> : ""
+      }
     </div>
   );
 }

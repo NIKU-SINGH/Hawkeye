@@ -1,154 +1,185 @@
-import React from "react";
+import { Fragment, useRef, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
-export default function Modal() {
-  const [showModal, setShowModal] = React.useState(false);
+export default function Example() {
+  const [open, setOpen] = useState(true);
+
+  const cancelButtonRef = useRef(null);
+
   return (
-    <>
-      {/* Start */}
-
-      <button
-        className="bg-[#f2a900] text-white active:bg-pink-600 font-normal uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-        type="button"
-        onClick={() => setShowModal(true)}
+    <Transition.Root show={open} as={Fragment}>
+      <Dialog
+        as="div"
+        className="relative z-10"
+        initialFocus={cancelButtonRef}
+        onClose={setOpen}
       >
-        Add
-      </button>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+        </Transition.Child>
 
-      {showModal ? (
-        <>
-          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-            <div className="relative w-auto my-6 mx-auto max-w-3xl">
-              {/*content*/}
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                {/*header*/}
-                <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                  <h3 className="text-2xl font-normal">Add Node</h3>
-                  <button
-                    className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    onClick={() => setShowModal(false)}
-                  >
-                    <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none"></span>
-                  </button>
-                </div>
-                {/*body*/}
+        <div className="fixed inset-0 z-10 overflow-y-auto font-Poppins">
+          <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              enterTo="opacity-100 translate-y-0 sm:scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+              leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            >
+              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-gray-900 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div className="bg-gray-800 px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                  <div className="sm:flex sm:items-start">
+                    <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                      <Dialog.Title
+                        as="h3"
+                        className="text-xl font-semibold leading-6 text-gray-300"
+                      >
+                        Add Node
+                      </Dialog.Title>
+                      <div className="mt-2 flex text-gray-300 items-center justify-center">
+                        <label
+                          htmlFor="username"
+                          className="block text-sm font-medium leading-6 mr-10 w-20"
+                        >
+                          Name
+                        </label>
 
-                <form>
-                  <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
-                    {/* First form */}
-                    <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
-                      <label
-                        className="  w-48 tracking-wide text-black text-base font-normal mb-2"
-                        htmlFor="Enter the Node Name"
-                      >
-                        Name
-                      </label>
-                      <input
-                        class="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
-                        id="company"
-                        type="text"
-                        placeholder="Enter the Node Name"
-                      />
-                    </div>
-                    {/* Second Form */}
-                    <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
-                      <label
-                        className="  w-48 tracking-wide text-black text-base font-normal mb-2"
-                        htmlFor="Enter the Node Name"
-                      >
-                        RPC host
-                      </label>
-                      <input
-                        className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
-                        id="company"
-                        type="text"
-                        placeholder="Enter the RPC host"
-                      />
-                    </div>
-                    {/* Second Form */}
-                    <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
-                      <label
-                        className=" w-48  tracking-wide text-black text-base font-normal mb-2"
-                        htmlFor="Enter the Node Name"
-                      >
-                        RPC Port
-                      </label>
-                      <input
-                        className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
-                        id="company"
-                        type="text"
-                        placeholder="Enter the RPC Port"
-                      />
-                    </div>
-                    {/* Second Form */}
-                    <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
-                      <label
-                        className="  w-48 tracking-wide text-black text-base font-normal mb-2"
-                        htmlFor="Enter the Node Name"
-                      >
-                        Mirror RPC Port
-                      </label>
-                      <input
-                        className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
-                        id="company"
-                        type="text"
-                        placeholder="Enter the Mirror RPC Port"
-                      />
-                    </div>
-                    <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
-                      <label
-                        className="  w-48 tracking-wide text-black text-base font-normal mb-2"
-                        htmlFor="Enter the Node Name"
-                      >
-                        Username
-                      </label>
-                      <input
-                        class="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
-                        id="company"
-                        type="text"
-                        placeholder="Enter the Username"
-                      />
-                    </div>
-                    <div class="w-full px-3 mb-6 md:mb-0 flex items-center justify-center">
-                      <label
-                        className=" w-48 tracking-wide text-black text-base font-normal mb-2"
-                        htmlFor="Enter the Node Name"
-                      >
-                        Password
-                      </label>
-                      <input
-                        className="ml-2 w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3"
-                        id="company"
-                        type="text"
-                        placeholder="Enter the Password"
-                      />
+                        <input
+                          type="text"
+                          name="username"
+                          id="username"
+                          autoComplete="username"
+                          className="block flex-1 border-0 bg-gray-700 rounded-lg py-1.5 pl-1 text-gray-400 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                          placeholder="janesmith"
+                        />
+                      </div>
+
+                      <div className="mt-2 flex text-gray-300 items-center justify-center">
+                        <label
+                          htmlFor="username"
+                          className="block text-sm font-medium leading-6 mr-10 w-20"
+                        >
+                          Username
+                        </label>
+
+                        <input
+                          type="text"
+                          name="username"
+                          id="username"
+                          autoComplete="username"
+                          className="block flex-1 border-0 bg-gray-700 rounded-lg py-1.5 pl-1 text-gray-400 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                          placeholder="janesmith"
+                        />
+                      </div>
+                      <div className="mt-2 flex text-gray-300 items-center justify-center">
+                        <label
+                          htmlFor="username"
+                          className="block text-sm font-medium leading-6 mr-10 w-20"
+                        >
+                          RPC Host
+                        </label>
+
+                        <input
+                          type="text"
+                          name="username"
+                          id="username"
+                          autoComplete="username"
+                          className="block flex-1 border-0 bg-gray-700 rounded-lg py-1.5 pl-1 text-gray-400 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                          placeholder="janesmith"
+                        />
+                      </div>
+                      <div className="mt-2 flex text-gray-300 items-center justify-center">
+                        <label
+                          htmlFor="username"
+                          className="block text-sm font-medium leading-6 mr-10 w-20"
+                        >
+                          RPC Port
+                        </label>
+
+                        <input
+                          type="text"
+                          name="username"
+                          id="username"
+                          autoComplete="username"
+                          className="block flex-1 border-0 bg-gray-700 rounded-lg py-1.5 pl-1 text-gray-400 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                          placeholder="janesmith"
+                        />
+                      </div>
+
+                      <div className="mt-2 flex text-gray-300 items-center justify-center">
+                        <label
+                          htmlFor="username"
+                          className="block text-sm font-medium leading-6 mr-10 w-20"
+                        >
+                          Mirror RPC Port
+                        </label>
+
+                        <input
+                          type="text"
+                          name="username"
+                          id="username"
+                          autoComplete="username"
+                          className="block flex-1 border-0 bg-gray-700 rounded-lg py-1.5 pl-1 text-gray-400 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                          placeholder="janesmith"
+                        />
+                      </div>
+
+                      <div className="mt-2 flex text-gray-300 items-center justify-center">
+                        <label
+                          htmlFor="username"
+                          className="block text-sm font-medium leading-6 mr-10 w-20" 
+                        >
+                          Archive
+                        </label>
+
+                        <input
+                          type="text"
+                          name="username"
+                          id="username"
+                          autoComplete="username"
+                          className="block flex-1 border-0 bg-gray-700 rounded-lg py-1.5 pl-1 text-gray-400 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                          placeholder="janesmith"
+                        />
+                      </div>
+
+
                     </div>
                   </div>
-                </form>
-                {/*footer*/}
-                <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                </div>
+                <div className="bg-gray-800 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                   <button
-                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setShowModal(false)}
+                    className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
+                    onClick={() => setOpen(false)}
                   >
-                    Close
+                    Cancel
                   </button>
                   <button
-                    className="bg-[#f2a900] text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-2 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setShowModal(false)}
+                    className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                    onClick={() => setOpen(false)}
+                    ref={cancelButtonRef}
                   >
-                    Save Changes
+                    Add
                   </button>
                 </div>
-              </div>
-            </div>
+              </Dialog.Panel>
+            </Transition.Child>
           </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-        </>
-      ) : null}
-
-      {/* End */}
-    </>
+        </div>
+      </Dialog>
+    </Transition.Root>
   );
 }

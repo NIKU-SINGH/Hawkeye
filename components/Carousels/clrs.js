@@ -2,7 +2,6 @@ import React from "react";
 import Card from "../Cards/index";
 import { Carousel } from "react-responsive-carousel";
 
-
 function Clrs() {
   return (
     <div>
@@ -10,12 +9,15 @@ function Clrs() {
       <div className=" m-10 items-center justify-center flex-wrap">
         <div className="">
           <Carousel
+            swipeable={false}
+            draggable={false}
+            showDots={true}
             autoPlay={true}
             infiniteLoop={true}
             useKeyboardArrows={true}
           >
             {data.map((card, idx) => (
-                <Card key={idx} card={card} />
+              <Card key={idx} card={card} />
             ))}
           </Carousel>
         </div>
