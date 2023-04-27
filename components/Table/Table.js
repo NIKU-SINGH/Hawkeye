@@ -49,7 +49,9 @@ function Table({ blockData }) {
                       <td class="p-2 whitespace-nowrap">
                         <div class="text-left">
                           {blockData
-                            ? Math.log(parseInt(blockData.work)).toPrecision(4)
+                            ? Math.log(
+                                parseInt(blockData.work, 16)
+                              ).toPrecision(4)
                             : "Nan"}
                         </div>
                       </td>
