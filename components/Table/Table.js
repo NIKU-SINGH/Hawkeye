@@ -5,49 +5,54 @@ function Table({ blockData }) {
   console.log(blockData);
   return (
     <div>
-      <section class="flex flex-col justify-center antialiased bg-gray-100 text-gray-600 min-h-screen ">
-        <div class="h-full font-Poppins ">
-          <div class="w-full max-w-5xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
-            <header class="px-5 py-4 border-b border-gray-100">
-              <h2 class="font-semibold  text-gray-800">Blockchain Info</h2>
+      <section className="flex flex-col justify-center antialiased  text-gray-900 ">
+        <div className="h-full font-Poppins ">
+          <div className="w-full max-w-5xl mx-auto bg-gray-800 shadow-2xl rounded-lg hover:shadow-cyan-500/50">
+            <header className="px-5 py-4 ">
+              {/* <h2 className="font-semibold text-lg text-gray-300">Blockchain Info</h2> */}
             </header>
-            <div class="p-3">
-              <div class="overflow-x-auto">
-                <table class="table-auto w-full">
-                  <thead class="text-xs font-semibold uppercase text-gray-800 bg-gray-200">
-                    <tr>
-                      <th class="p-2 whitespace-nowrap bg-orange-400">
-                        <div class="font-semibold text-left ">Parameter</div>
+
+            {/* Table Start */}
+            <div className="p-3">
+              <div className="overflow-x-auto">
+                <table className="table-auto w-full">
+                {/* Table Header */}
+                  <thead className="font-semibold uppercase text-gray-300 bg-gray-900  ">
+                    <tr className="">
+                      <th className="p-4 whitespace-nowrap hover:bg-gray-700 cursor-pointer">
+                        <div className="font-semibold text-base text-left ">Parameter</div>
                       </th>
-                      <th class="p-2 whitespace-nowrap">
-                        <div class="font-semibold text-left">Results</div>
+                      <th className="p-4 whitespace-nowrap hover:bg-gray-700 cursor-pointer">
+                        <div className="font-semibold text-left">Results</div>
                       </th>
-                      <th class="p-2 whitespace-nowrap bg-orange-400">
-                        <div class="font-semibold text-left">Parameter</div>
+                      <th className="p-4 whitespace-nowrap hover:bg-gray-700 cursor-pointer">
+                        <div className="font-semibold text-left">Parameter</div>
                       </th>
-                      <th class="p-2 whitespace-nowrap">
-                        <div class="font-semibold text-left">Results</div>
+                      <th className="p-4 whitespace-nowrap hover:bg-gray-700 cursor-pointer">
+                        <div className="font-semibold text-left">Results</div>
                       </th>
                     </tr>
                   </thead>
 
-                  <tbody class="text-sm divide-y divide-gray-100">
-                    <tr>
-                      <td class="p-2 whitespace-nowrap bg-orange-300">
-                        <div class="flex items-center">
-                          <div class="font-medium text-gray-800">Height</div>
+
+                  <tbody className="text-sm text-gray-300  ">
+                  {/* 2nd Row */}
+                    <tr className=" rounded-lg cursor-pointer">
+                      <td className=" p-2 whitespace-nowrap">
+                        <div className="flex items-center">
+                          <div className="font-medium text-gray-300 p-2">Height</div>
                         </div>
                       </td>
-                      <td class="p-2 whitespace-nowrap">
-                        <div class="text-left">
+                      <td className="p-2 whitespace-nowrap">
+                        <div className="text-left p-2">
                           {blockData ? blockData.height : "Nan"}
                         </div>
                       </td>
-                      <td class="p-2 whitespace-nowrap bg-orange-300">
-                        <div class="text-left font-medium">Pow</div>
+                      <td className="p-2 whitespace-nowrap">
+                        <div className="text-left font-medium p-2">Pow</div>
                       </td>
-                      <td class="p-2 whitespace-nowrap">
-                        <div class="text-left">
+                      <td className="p-2 whitespace-nowrap">
+                        <div className="text-left p-2">
                           {blockData
                             ? Math.log(
                                 parseInt(blockData.work, 16)
@@ -58,58 +63,58 @@ function Table({ blockData }) {
                     </tr>
 
                     <tr>
-                      <td class="p-2 whitespace-nowrap bg-orange-300">
-                        <div class="flex items-center">
-                          <div class="font-medium text-gray-800">Hash</div>
+                      <td className="p-2 whitespace-nowrap ">
+                        <div className="flex items-center">
+                          <div className="font-medium p-2">Hash</div>
                         </div>
                       </td>
-                      <td class="p-2 whitespace-nowrap">
-                        <div class="text-left">
+                      <td className="p-2 whitespace-nowrap">
+                        <div className="text-left p-2">
                           {blockData ? blockData.hash : "Nan"}
                         </div>
                       </td>
-                      <td class="p-2 whitespace-nowrap  bg-orange-300">
-                        <div class="text-left font-medium">First Seen</div>
+                      <td className="p-2 whitespace-nowrap ">
+                        <div className="text-left font-medium p-2">First Seen</div>
                       </td>
-                      <td class="p-2 whitespace-nowrap">
-                        <div class="text-left">
+                      <td className="p-2 whitespace-nowrap">
+                        <div className="text-left p-2">
                           {blockData ? blockData.first_seen_by : "Nan"}
                         </div>
                       </td>
                     </tr>
 
                     <tr>
-                      <td class="p-2 whitespace-nowrap bg-orange-300">
-                        <div class="flex items-center">
-                          <div class="font-medium text-gray-800">
+                      <td className="p-2 whitespace-nowrap ">
+                        <div className="flex items-center">
+                          <div className="font-medium p-2">
                             Parent Hash
                           </div>
                         </div>
                       </td>
-                      <td class="p-2 whitespace-nowrap">
-                        <div class="text-left">
+                      <td className="p-2 whitespace-nowrap">
+                        <div className="text-left p-2">
                           {blockData ? blockData.parent_hash : "Nan"}
                         </div>
                       </td>
 
-                      <td class="p-2 whitespace-nowrap  bg-orange-300">
-                        <div class="text-left font-medium">Txs</div>
+                      <td className="p-2 whitespace-nowrap  ">
+                        <div className="text-left font-medium p-2">Txs</div>
                       </td>
-                      <td class="p-2 whitespace-nowrap">
-                        <div class="text-left">
+                      <td className="p-2 whitespace-nowrap ">
+                        <div className="text-left p-2">
                           {blockData ? blockData.txids.length : "Nan"}
                         </div>
                       </td>
                     </tr>
 
                     <tr>
-                      <td class="p-2 whitespace-nowrap bg-orange-300">
-                        <div class="flex items-center">
-                          <div class="font-medium text-gray-800">Miner</div>
+                      <td className="p-2 whitespace-nowrap ">
+                        <div className="flex items-center">
+                          <div className="font-medium p-2">Miner</div>
                         </div>
                       </td>
-                      <td class="p-2 whitespace-nowrap">
-                        <div class="text-left">
+                      <td className="p-2 whitespace-nowrap">
+                        <div className="text-left p-2">
                           {blockData
                             ? // ? typeof blockData.pool_name == "string"
                               blockData.height < 5000000
@@ -120,11 +125,11 @@ function Table({ blockData }) {
                         </div>
                       </td>
 
-                      <td class="p-2 whitespace-nowrap  bg-orange-300">
-                        <div class="text-left font-medium">Fees</div>
+                      <td className="p-2 whitespace-nowrap  ">
+                        <div className="text-left font-medium p-2">Fees</div>
                       </td>
-                      <td class="p-2 whitespace-nowrap">
-                        <div class="text-left">
+                      <td className="p-2 whitespace-nowrap">
+                        <div className="text-left p-2">
                           {blockData ? blockData.total_fee : "Nan"}
                         </div>
                       </td>
