@@ -6,8 +6,8 @@ function Index({ card }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex-row justify-center items-center m-8 font-Poppins">
-      <div className="flex-col items-center p-2 mt-2 h-64 w-64 bg-gray-800 rounded-lg hover:cursor-pointer shadow-2xl hover:shadow-cyan-500/50">
+    <div className="flex-row justify-center items-center m-4  font-Poppins">
+      <div className="flex-col items-center p-2 mt-2 h-64 w-64 bg-gray-900 rounded-lg hover:cursor-pointer shadow-2xl hover:shadow-cyan-500/50">
         {/* Logo */}
         <div className="w-full flex items-center justify-center">
           <Image

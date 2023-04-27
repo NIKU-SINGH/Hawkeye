@@ -4,7 +4,7 @@ function index() {
   return (
     <div>
       {/*New Section  */}
-      <div className=" bg-gray-800 p-1 rounded-lg flex justify-between m-4">
+      <div className=" bg-gray-800 p-1 rounded-lg flex justify-between m-4 hover:shadow-cyan-500/50 shadow-2xl">
         <div className="bg-gray-800 rounded-lg w-full p-1 flex-col">
           <h1 className="text-xl font-semibold p-4 ">
             Check Transaction Status

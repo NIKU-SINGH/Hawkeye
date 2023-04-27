@@ -7,9 +7,9 @@ function Table({ blockData }) {
     <div>
       <section className="flex flex-col justify-center antialiased  text-gray-900 ">
         <div className="h-full font-Poppins ">
-          <div className="w-full max-w-5xl mx-auto bg-gray-800 shadow-2xl rounded-lg hover:shadow-cyan-500/50">
+          <div className="w-full mx-auto bg-gray-800 shadow-2xl rounded-lg hover:shadow-cyan-500/50">
             <header className="px-5 py-4 ">
-              {/* <h2 className="font-semibold text-lg text-gray-300">Blockchain Info</h2> */}
+              <h2 className="font-semibold text-lg text-gray-300">Blockchain Info</h2>
             </header>
 
             {/* Table Start */}
@@ -17,18 +17,18 @@ function Table({ blockData }) {
               <div className="overflow-x-auto">
                 <table className="table-auto w-full">
                 {/* Table Header */}
-                  <thead className="font-semibold uppercase text-gray-300 bg-gray-900  ">
+                  <thead className="font-semibold uppercase text-gray-300 bg-gray-900 rounded-lg">
                     <tr className="">
-                      <th className="p-4 whitespace-nowrap hover:bg-gray-700 cursor-pointer">
+                      <th className="p-4 whitespace-nowrap hover:bg-gray-700 rounded-lg cursor-pointer">
                         <div className="font-semibold text-base text-left ">Parameter</div>
                       </th>
-                      <th className="p-4 whitespace-nowrap hover:bg-gray-700 cursor-pointer">
+                      <th className="p-4 whitespace-nowrap hover:bg-gray-700 rounded-lg cursor-pointer">
                         <div className="font-semibold text-left">Results</div>
                       </th>
-                      <th className="p-4 whitespace-nowrap hover:bg-gray-700 cursor-pointer">
+                      <th className="p-4 whitespace-nowrap hover:bg-gray-700 rounded-lg cursor-pointer">
                         <div className="font-semibold text-left">Parameter</div>
                       </th>
-                      <th className="p-4 whitespace-nowrap hover:bg-gray-700 cursor-pointer">
+                      <th className="p-4 whitespace-nowrap hover:bg-gray-700 rounded-lg cursor-pointer">
                         <div className="font-semibold text-left">Results</div>
                       </th>
                     </tr>
