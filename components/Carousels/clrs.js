@@ -29,22 +29,16 @@ function Clrs({ data }) {
       {/* Main content */}
       <div className=" m-10 items-center justify-center flex-wrap">
         <Carousel
-          swipeable={false}
-          draggable={false}
-          showDots={true}
+          ssr
+          partialVisbile
+          itemClass="image-item"
           responsive={responsive}
-          ssr={true} // means to render carousel on server-side.
+          removeArrowOnDeviceType={["tablet", "mobile"]}
+          dotListClass="custom-dot-list-style"
+          transitionDuration={500}
           infinite={true}
           autoPlay={true}
-          autoPlaySpeed={3000}
-          keyBoardControl={true}
-          customTransition="all .5"
-          transitionDuration={500}
-          containerClass="carousel-container"
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          rewindWithAnimation={true}
-          dotListClass="custom-dot-list-style"
-          className="overflow-hidden flex items-center justify-center"
+          showDots={true}
         >
           {data.map((card, idx) => (
             <Card key={idx} card={card} />

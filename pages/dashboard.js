@@ -125,8 +125,6 @@ function Dashboard() {
             {/* Table */}
             <div className="w-full m-8 p-4">
               <Table />
-
-
             </div>
           </div>
 
