@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar/index'
 import Hero  from '../components/Hero/index'
 export default function Home() {
   return (
-    <main>
+    <main className='bg-black'>
       <Navbar />
       <Hero />
       <Footer />

@@ -85,14 +85,14 @@ const data = [
   },
 ];
 
-function dashboard() {
+function Dashboard() {
   const [openAdd, setOpenAdd] = useState(false);
 
   return (
     <div>
       <div className="flex justify-between font-Poppins">
       <div className="w-64 h-screen ">
-        {/* <Sidebar /> */}
+        <Sidebar />
       </div>
         {/* Node Info */}
         <div className="w-4/5 flex-col">
@@ -114,7 +114,7 @@ function dashboard() {
           </div>
 
           <div className="m-8 bg-gray-800 rounded-lg">
-            <h1 className=" text-xl font-semibold p-1 ">Node Info</h1>
+            <h1 className=" text-xl font-semibold p-4 ">Node Info</h1>
             <div className="w-full">
               <Clrs data={data} />
             </div>
@@ -124,7 +124,7 @@ function dashboard() {
           <div className="flex mt-10 flex-wrap">
             {/* Table */}
             <div className="w-full m-8 p-4">
-              <Table />TypeError: __webpack_require__.a is not a function
+              <Table />
 
 
             </div>
@@ -148,4 +148,4 @@ function dashboard() {
   );
 }
 
-export default dashboard;
+export default Dashboard;

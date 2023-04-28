@@ -1,6 +1,10 @@
 import React from "react";
+import { useState } from "react";
+import Modal from "../Modal/info";
 
-function index() {
+function Index() {
+  const [openHeight, setOpenHeight] = useState(false);
+
   return (
     <div>
       {/*New Section  */}
@@ -16,9 +20,13 @@ function index() {
                 <label
                   className="bg-orange-400 cursor-pointer py-2 text-center w-48 rounded tracking-wide text-white text-base font-normal "
                   htmlFor="Enter the Node Name"
+                  onClick={() => setOpenHeight(!openHeight)}
+
                 >
                   By Height
                 </label>
+                {/* Modal */}
+                {openHeight ? <Modal title={"Get Block By Height"} feild="Height" /> : ""}
               </div>
 
               {/* Input 2 */}
@@ -66,4 +74,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;
