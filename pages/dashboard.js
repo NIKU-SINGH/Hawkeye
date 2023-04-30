@@ -1,15 +1,21 @@
 import React from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import Card from "../components/Cards/index";
 import Sidebar from "../components/Sidebar/Index";
 import Table from "../components/Table/Table";
 import Info from "../components/Info/index";
 import Status from "../components/Status/index";
 import Update from "../components/Update/index";
-import Modal from "../components/Modal/index";
-import { useState } from "react";
+import Modal from "@/components/Modal/index";
+import CustomModal from "@/components/Modal/info";
+import { useState, useEffect } from "react";
 import Clrs from "@/components/Carousels/clrs";
+import {
+  getTips,
+  getBlockByHeight,
+  getBlockByHash,
+  addNode,
+  removeNode,
+  getBlockFromPeer,
+} from "@/helper";
 
 // Card Data
 const data = [
@@ -87,13 +93,54 @@ const data = [
 
 function Dashboard() {
   const [openAdd, setOpenAdd] = useState(false);
+  // Remove modal
+  const [openRemove, setOpenRemove] = useState(false);
+  // State variables
+  const [tips, setTips] = useState([]);
+  const [blockData, setBlockData] = useState([]);
+  const [maxHeight, setMaxHeight] = useState("");
+  const [isAddActive, setAddActive] = useState(false);
+  const [isRemoveActive, setRemoveActive] = useState(false);
+
+  // Node details
+  const [name, setName] = useState([]);
+  const [username, setUsername] = useState([]);
+  const [rpcHost, setRpcHost] = useState([]);
+  const [rpcPort, setRpcPort] = useState([]);
+  const [rpcMirrorPort, setMirrorRpcPort] = useState([]);
+  const [archive, setArchive] = useState(false);
+  const [nodeId, setNodeId] = useState();
+
+  // useEffect(() => {
+  //   getData();
+  //   getBlockByHeight();
+  // }, [maxHeight]);
+
+  // const getData = () => {
+  //   getTips()
+  //     .then((nodes_data) => {
+  //       setTips(nodes_data);
+  //       console.log(nodes_data);
+  //       setMaxHeight(nodes_data[0].height);
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
+
+  const getData = async () => {
+    try {
+      const res = await getTips();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  console.log("This is the data",getData());
 
   return (
     <div>
       <div className="flex justify-between font-Poppins">
-      <div className="w-64 h-screen ">
-        <Sidebar />
-      </div>
+        <div className="w-64 h-screen ">
+          <Sidebar />
+        </div>
         {/* Node Info */}
         <div className="w-4/5 flex-col">
           {/* Carousel Component */}
@@ -106,7 +153,7 @@ function Dashboard() {
               Add
             </button>
             <button
-              onClick={() => setOpenAdd(!openAdd)}
+              onClick={() => setOpenRemove(!openRemove)}
               className="bg-orange-400 m-2 cursor-pointer py-2 text-center w-48 rounded tracking-wide text-white text-base font-normal"
             >
               Remove
@@ -142,6 +189,16 @@ function Dashboard() {
 
       {/* Modals */}
       {openAdd ? <Modal /> : ""}
+      {openRemove ? (
+        <CustomModal
+          title={"Remove Node"}
+          feild="Node Id"
+          placeholder="Enter Node ID"
+          key={1}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 }

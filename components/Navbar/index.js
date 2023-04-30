@@ -22,9 +22,10 @@ function Nav() {
             <div className="font-medium text-gray-300">
               <div className="hidden md:block ">
                 <div className="ml-10 flex items-baseline space-x-12">
-                  <Link href="explore" className="px-3 py-2 text-base">
+                
+                  {/* <Link href="explore" className="px-3 py-2 text-base">
                     Explore
-                  </Link>
+                  </Link> */}
 
                   <Link
                     href="dashboard"

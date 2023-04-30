@@ -6,64 +6,6 @@
 // import Mainnav from "../components/Navbar/mainNavbar";
 // import { getTips, getBlockByHeight } from "@/helper";
 
-// const responsive = {
-//   superLargeDesktop: {
-//     // the naming can be any, depends on you.
-//     breakpoint: { max: 4000, min: 3000 },
-//     items: 6,
-//   },
-//   desktop: {
-//     breakpoint: { max: 3000, min: 1024 },
-//     items: 4,
-//   },
-//   tablet: {
-//     breakpoint: { max: 1024, min: 464 },
-//     items: 1,
-//   },
-//   mobile: {
-//     breakpoint: { max: 464, min: 0 },
-//     items: 1,
-//   },
-// };
-
-// // Card Data
-// const data = [
-//   {
-//     name: "Rpi 4",
-//     node_id: "5",
-//     status: "Active",
-//     height: 77777,
-//     img: "/images/rpi.png",
-//   },
-//   {
-//     name: "bcoin",
-//     node_id: "15",
-//     status: "Stale",
-//     height: 77779,
-//     img: "/images/bcoin.png",
-//   },
-//   {
-//     name: "Core",
-//     node_id: "25",
-//     status: "Active",
-//     height: 77777,
-//     img: "/images/core.png",
-//   },
-//   {
-//     name: "bcoin",
-//     node_id: "15",
-//     status: "Stale",
-//     height: 77779,
-//     img: "/images/bcoin.png",
-//   },
-//   {
-//     name: "Core",
-//     node_id: "25",
-//     status: "Active",
-//     height: 77777,
-//     img: "/images/core.png",
-//   },
-// ];
 
 // function Explore() {
 //   const [tips, setTips] = useState([]);

@@ -20,7 +20,7 @@ function Index() {
           <div>
             <div className=" flex flex-wrap ">
               {/* Input 1 */}
-              <div class="px-3 mb-2 flex items-center justify-center">
+              <div className="px-3 mb-2 flex items-center justify-center">
                 <label
                   className="bg-orange-400 cursor-pointer py-2 text-center w-48 rounded tracking-wide text-white text-base font-normal "
                   htmlFor="Enter the Node Name"
@@ -31,14 +31,19 @@ function Index() {
                 </label>
                 {/* Modal */}
                 {openHeight ? (
-                  <Modal title={"Get Block By Height"} feild="Height" key={1} />
+                  <Modal
+                    title={"Get Block By Height"}
+                    feild="Height"
+                    placeholder="Enter Block Height"
+                    key={1}
+                  />
                 ) : (
                   ""
                 )}
               </div>
 
               {/* Input 2 */}
-              <div class=" px-3 mb-2 flex items-center justify-center">
+              <div className=" px-3 mb-2 flex items-center justify-center">
                 <label
                   className="bg-orange-400 cursor-pointer py-2 text-center w-48 rounded tracking-wide text-white text-base font-normal "
                   htmlFor="Enter the Node Name"
@@ -49,14 +54,19 @@ function Index() {
                 </label>
                 {/* Modal */}
                 {openHash ? (
-                  <Modal title={"Get Block By hash"} feild="Hash" key={2} />
+                  <Modal
+                    title={"Get Block By hash"}
+                    feild="Hash"
+                    placeholder="Enter Block hash"
+                    key={2}
+                  />
                 ) : (
                   ""
                 )}
               </div>
 
               {/* Input 3 */}
-              <div class=" px-3 mb-2 flex items-center justify-center">
+              <div className=" px-3 mb-2 flex items-center justify-center">
                 <label
                   className="bg-orange-400 cursor-pointer py-2 text-center w-48 rounded tracking-wide text-white text-base font-normal "
                   htmlFor="Enter the Node Name"
@@ -67,7 +77,12 @@ function Index() {
                 </label>
                 {/* Modal */}
                 {openFromPeer ? (
-                  <Modal title={"Get Block From Peer"} feild="Peer" key={3} />
+                  <Modal
+                    title={"Get Block From Peer"}
+                    feild="Peer"
+                    placeholder="Get Block From Peer"
+                    key={3}
+                  />
                 ) : (
                   ""
                 )}
@@ -75,7 +90,7 @@ function Index() {
               {/* Input 4 */}
               <div class=" px-3 mb-2 flex items-center justify-center">
                 <label
-                  className="bg-orange-400 py-2 text-center w-48 rounded tracking-wide text-white text-base font-normal "
+                  className="bg-orange-400 py-2 cursor-pointer  text-center w-48 rounded tracking-wide text-white text-base font-normal "
                   htmlFor="Enter the Node Name"
                   onClick={() => setOpenGetPeer(!openGetPeer)}
                   key={4}
@@ -84,24 +99,36 @@ function Index() {
                 </label>
                 {/* Modal */}
                 {openGetPeer ? (
-                  <Modal title={"Get Peers"} feild="Peers" key={4} />
+                  <Modal
+                    title={"Get Peers"}
+                    feild="Peers"
+                    placeholder="Get Peers"
+                    key={4}
+                  />
                 ) : (
                   ""
                 )}
               </div>
               {/* Input 5 */}
-              <div class=" px-3 mb-2 flex items-center justify-center">
+              <div
+                onClick={() => setOpenGetTips(!openGetTips)}
+                class="px-3 mb-2 flex items-center justify-center"
+              >
                 <label
-                  className="bg-orange-400 py-2 text-center w-48 rounded tracking-wide text-white text-base font-normal"
+                  className="bg-orange-400 py-2 cursor-pointer text-center w-48 rounded tracking-wide text-white text-base font-normal"
                   htmlFor="Enter the Node Name"
-                  onClick={() => setOpenGetTips(!openGetTips)}
                   key={5}
                 >
                   Get Tips
                 </label>
                 {/* Modal */}
                 {openGetTips ? (
-                  <Modal title={"Get Tips"} feild="Tips" key={5} />
+                  <Modal
+                    title={"Get Tips"}
+                    feild="Tips"
+                    placeholder="Get Tips"
+                    key={5}
+                  />
                 ) : (
                   ""
                 )}

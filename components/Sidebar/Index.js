@@ -5,8 +5,8 @@ function Index() {
   const router = useRouter();
   return (
     <div>
-      <div className="bg-gray-900 font-Poppins z-10 max-w-96">
-        <div className="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-900">
+      <div className="bg-gray-900 font-Poppins z-10">
+        <div className="sidebar fixed top-0 bottom-0 lg:left-0 w-48 p-2 overflow-y-auto text-center bg-gray-900">
           <div className="text-gray-100 text-xl">
             <div className="p-2.5 mt-1 flex items-center">
               <h1

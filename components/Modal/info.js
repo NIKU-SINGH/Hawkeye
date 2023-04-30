@@ -2,7 +2,7 @@ import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
-export default function Example({title, feild}) {
+export default function Example({title, feild, placeholder}) {
 
   const [open, setOpen] = useState(true);
 
@@ -63,7 +63,7 @@ export default function Example({title, feild}) {
                           id="username"
                           autoComplete="username"
                           className="block flex-1 border-0 bg-gray-700 rounded-lg py-1.5 pl-1 text-gray-400 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                          placeholder="janesmith"
+                          placeholder={`${placeholder}`}
                         />
                       </div>
                     </div>
