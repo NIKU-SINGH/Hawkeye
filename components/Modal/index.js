@@ -1,11 +1,27 @@
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
-
+import SucessModal from "./success";
 export default function Example() {
   const [open, setOpen] = useState(true);
+  const [openSuccess, setOpenSuccess] = useState(false);
+
+  // Node details
+  const [name, setName] = useState([]);
+  const [username, setUsername] = useState([]);
+  const [rpcHost, setRpcHost] = useState([]);
+  const [rpcPort, setRpcPort] = useState([]);
+  const [rpcMirrorPort, setMirrorRpcPort] = useState([]);
+  const [archive, setArchive] = useState(false);
+  const [nodeId, setNodeId] = useState();
 
   const cancelButtonRef = useRef(null);
+
+  // Handle Submit
+  const handleSubmit = () => {
+    setOpenSuccess(true)
+    console.log("Submit", name, username, rpcMirrorPort, rpcPort, nodeId)
+  }
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -58,11 +74,13 @@ export default function Example() {
 
                         <input
                           type="text"
-                          name="username"
-                          id="username"
-                          autoComplete="username"
+                          name="name"
+                          id="name"
+                          autoComplete="name"
                           className="block flex-1 border-0 bg-gray-700 rounded-lg py-1.5 pl-1 text-gray-400 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                          placeholder="janesmith"
+                          placeholder="Enter Node Name"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
                         />
                       </div>
 
@@ -80,7 +98,9 @@ export default function Example() {
                           id="username"
                           autoComplete="username"
                           className="block flex-1 border-0 bg-gray-700 rounded-lg py-1.5 pl-1 text-gray-400 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                          placeholder="janesmith"
+                          placeholder="Enter Username"
+                          value={username}
+                          onChange={(e) => setUsername(e.target.value)}
                         />
                       </div>
                       <div className="mt-2 flex text-gray-300 items-center justify-center">
@@ -93,16 +113,18 @@ export default function Example() {
 
                         <input
                           type="text"
-                          name="username"
-                          id="username"
-                          autoComplete="username"
+                          name="rpcHost"
+                          id="rpcHost"
+                          autoComplete="rpcHost"
                           className="block flex-1 border-0 bg-gray-700 rounded-lg py-1.5 pl-1 text-gray-400 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                          placeholder="janesmith"
+                          placeholder="Enter the RPC Host IP address"
+                          value={rpcHost}
+                          onChange={(e) => setRpcHost(e.target.value)}
                         />
                       </div>
                       <div className="mt-2 flex text-gray-300 items-center justify-center">
                         <label
-                          htmlFor="username"
+                          htmlFor="rpcPort"
                           className="block text-sm font-medium leading-6 mr-10 w-20"
                         >
                           RPC Port
@@ -110,17 +132,19 @@ export default function Example() {
 
                         <input
                           type="text"
-                          name="username"
-                          id="username"
-                          autoComplete="username"
+                          name="rpcPort"
+                          id="rpcPort"
+                          autoComplete="rpcPort"
                           className="block flex-1 border-0 bg-gray-700 rounded-lg py-1.5 pl-1 text-gray-400 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                          placeholder="janesmith"
+                          placeholder="Enter the RPC Port"
+                          value={rpcHost}
+                          onChange={(e) => setRpcPort(e.target.value)}
                         />
                       </div>
 
                       <div className="mt-2 flex text-gray-300 items-center justify-center">
                         <label
-                          htmlFor="username"
+                          htmlFor="mirror Port"
                           className="block text-sm font-medium leading-6 mr-10 w-20"
                         >
                           Mirror RPC Port
@@ -128,33 +152,35 @@ export default function Example() {
 
                         <input
                           type="text"
-                          name="username"
-                          id="username"
-                          autoComplete="username"
+                          name="mirrorPort"
+                          id="mirrorPort"
+                          autoComplete="mirrorPort"
                           className="block flex-1 border-0 bg-gray-700 rounded-lg py-1.5 pl-1 text-gray-400 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                          placeholder="janesmith"
+                          placeholder="Enter Mirror RPC Port"
+                          value={rpcMirrorPort}
+                          onChange={(e) => setMirrorRpcPort(e.target.value)}
                         />
                       </div>
 
                       <div className="mt-2 flex text-gray-300 items-center justify-center">
                         <label
-                          htmlFor="username"
-                          className="block text-sm font-medium leading-6 mr-10 w-20" 
+                          htmlFor="archive"
+                          className="block text-sm font-medium leading-6 mr-10 w-20"
                         >
                           Archive
                         </label>
 
-                        <input
-                          type="text"
-                          name="username"
-                          id="username"
-                          autoComplete="username"
+                        <select
+                          name="archive"
+                          id="archive"
+                          value={archive}
+                          onChange={(e) => setArchive(e.target.value)}
                           className="block flex-1 border-0 bg-gray-700 rounded-lg py-1.5 pl-1 text-gray-400 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                          placeholder="janesmith"
-                        />
+                        >
+                          <option value="1">True</option>
+                          <option value="2">False</option>
+                        </select>
                       </div>
-
-
                     </div>
                   </div>
                 </div>
@@ -170,7 +196,7 @@ export default function Example() {
                     type="button"
                     className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
                     // API request Function
-                    // onClick={() => setOpen(false)}
+                    onClick={handleSubmit}
                     ref={cancelButtonRef}
                   >
                     Add
@@ -178,6 +204,9 @@ export default function Example() {
                 </div>
               </Dialog.Panel>
             </Transition.Child>
+
+            {/* Open Success
+            {openSuccess ? <SucessModal /> : ""} */}
           </div>
         </div>
       </Dialog>

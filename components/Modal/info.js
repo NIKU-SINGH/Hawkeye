@@ -2,9 +2,12 @@ import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
-export default function Example({title, feild, placeholder}) {
+export default function Example({title, feild, placeholder, buttonSlug}) {
 
   const [open, setOpen] = useState(true);
+
+  // State Variables
+  
 
   const cancelButtonRef = useRef(null);
 
@@ -83,7 +86,7 @@ export default function Example({title, feild, placeholder}) {
                     onClick={() => setOpen(false)}
                     ref={cancelButtonRef}
                   >
-                    Add
+                    {buttonSlug}
                   </button>
                 </div>
                

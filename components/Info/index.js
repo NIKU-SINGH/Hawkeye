@@ -2,12 +2,21 @@ import React from "react";
 import { useState } from "react";
 import Modal from "../Modal/info";
 
+// Button Values
+const data = [
+  {
+    title: " By Height",
+  },
+]
+
 function Index() {
   const [openHeight, setOpenHeight] = useState(false);
   const [openHash, setOpenHash] = useState(false);
   const [openFromPeer, setOpenFromPeer] = useState(false);
   const [openGetPeer, setOpenGetPeer] = useState(false);
   const [openGetTips, setOpenGetTips] = useState(false);
+
+  
 
   return (
     <div>
@@ -35,6 +44,7 @@ function Index() {
                     title={"Get Block By Height"}
                     feild="Height"
                     placeholder="Enter Block Height"
+                    buttonSlug="Get Block"
                     key={1}
                   />
                 ) : (
@@ -58,6 +68,7 @@ function Index() {
                     title={"Get Block By hash"}
                     feild="Hash"
                     placeholder="Enter Block hash"
+                    buttonSlug="Get Block"
                     key={2}
                   />
                 ) : (
@@ -81,6 +92,7 @@ function Index() {
                     title={"Get Block From Peer"}
                     feild="Peer"
                     placeholder="Get Block From Peer"
+                    buttonSlug="Get Block"
                     key={3}
                   />
                 ) : (
@@ -103,6 +115,7 @@ function Index() {
                     title={"Get Peers"}
                     feild="Peers"
                     placeholder="Get Peers"
+                    buttonSlug="Get Peers"
                     key={4}
                   />
                 ) : (
@@ -127,6 +140,8 @@ function Index() {
                     title={"Get Tips"}
                     feild="Tips"
                     placeholder="Get Tips"
+                    buttonSlug="Get Tips"
+                    // apiEndpoint=
                     key={5}
                   />
                 ) : (

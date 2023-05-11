@@ -1,7 +1,7 @@
 import { JsonRpc } from "node-jsonrpc-client";
 const addr = "192.168.0.107";
 const rpc = new JsonRpc(`http://${addr}:8339`);
-
+// http://134.209.20.197:8332/
 export const getTips = async () => {
   try {
     const res = await rpc.call("get_tips", { active_only: false });

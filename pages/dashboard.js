@@ -102,14 +102,7 @@ function Dashboard() {
   const [isAddActive, setAddActive] = useState(false);
   const [isRemoveActive, setRemoveActive] = useState(false);
 
-  // Node details
-  const [name, setName] = useState([]);
-  const [username, setUsername] = useState([]);
-  const [rpcHost, setRpcHost] = useState([]);
-  const [rpcPort, setRpcPort] = useState([]);
-  const [rpcMirrorPort, setMirrorRpcPort] = useState([]);
-  const [archive, setArchive] = useState(false);
-  const [nodeId, setNodeId] = useState();
+  
 
   // useEffect(() => {
   //   getData();
@@ -129,11 +122,12 @@ function Dashboard() {
   const getData = async () => {
     try {
       const res = await getTips();
+      console.log("This is the data", res);
     } catch (err) {
       console.log(err);
     }
   };
-  console.log("This is the data",getData());
+
 
   return (
     <div>
@@ -194,6 +188,7 @@ function Dashboard() {
           title={"Remove Node"}
           feild="Node Id"
           placeholder="Enter Node ID"
+          buttonSlug={"Remove"}
           key={1}
         />
       ) : (
